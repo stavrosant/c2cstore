@@ -62,7 +62,8 @@
             }  
           
         }  
-        //test comment
+        
+    //Unecesary. Kept for legacy or future development.
         @Override  
         protected void doGet(HttpServletRequest req, HttpServletResponse resp)  
                 throws ServletException, IOException {  
