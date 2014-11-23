@@ -25,6 +25,7 @@
             <tr>
                 <td align="right">    <input type="submit" value="login"> </form></td>
                 <td> <form action="Register" method="post"> <input type="submit" value="Register"> </form> </td>
+                 <td><form action="passrecover" method="post"><input type="submit" value="Forgot Password?"> </form></td>
             </tr>
         </table>
     </body>
