@@ -12,7 +12,7 @@
         <title>Welcome</title>
     </head>
     <body>
-       <table>
+       <table align="center">
             <form action="Index" method="post">
             <tr>
                 <td align="right">NAME:</td>

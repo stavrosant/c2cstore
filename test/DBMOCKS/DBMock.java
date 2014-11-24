@@ -12,8 +12,8 @@ package DBMOCKS;
 public class DBMock {
     private String username,password,rank;
     public DBMock(String usrnm, String pass, String rank){
-        this.username = usrnm;
-        this.password = pass;
+        this.username = "admin";
+        this.password = "admin";
         this.rank = rank;
     }
     public String getName(){
