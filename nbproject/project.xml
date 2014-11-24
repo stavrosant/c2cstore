@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.web.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/web-project/3">
-            <name>c2c</name>
+            <name>c2cWorking</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <web-module-libraries>
                 <library dirs="200">

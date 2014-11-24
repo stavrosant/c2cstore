@@ -11,8 +11,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SUPER USER CONTROL PANEL</title>
+        <link rel='stylesheet' type='text/css' href='SuperUserDashboard-desine.css'/>
     </head>
-    <body>
+    <body style="background-color: #d0e4fe">
         <div align="right">
     
   <%  
@@ -20,7 +21,7 @@ LoginUserModel LUM=(LoginUserModel)request.getAttribute("bean");
 out.print("Welcome, "+LUM.getName());  
 %>   
 </div>
-        <h1 align="center">ADMIN PANEL</h1>
+        <h1 align="center"><b><i>ADMIN PANEL</i></b></h1>
         <table align="center">
             <tr>
                 <td> <form action="Admin" method="post"><input type="submit" value="Create User"></form></td>
@@ -32,14 +33,7 @@ out.print("Welcome, "+LUM.getName());
             </tr>
            
         </table>
-         
-         
-        
-        
-        
-       
-        
-    </body>
+ </body>
 </html>
 
 

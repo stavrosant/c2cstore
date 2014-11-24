@@ -9,9 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel='stylesheet' type='text/css' href='CreateUser-desine.css'/>
         <title>JSP Page</title>
     </head>
-    <body>
+    <body style="background-color: #d0e4fe">
         <h1 align="center">Create User!!!</h1>
         . <form action="" method="post">
             <table align="center">

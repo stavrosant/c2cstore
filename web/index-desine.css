@@ -1,0 +1,22 @@
+/*
+=====================================
+login style
+=====================================
+ */
+body {
+    background-image: url{"uc.png"};
+    background-color: #d0e4fe;
+    
+}
+
+h2{
+    color: darkgreen;
+    text-align:center;
+    font-family: "Comic Sans MS";
+    font-size: 25px;
+}
+#logindiv{
+
+relative-position:center;
+}
+

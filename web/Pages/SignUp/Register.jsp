@@ -11,7 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Please feel in your details</title>
     </head>
-    <body>
+    <body style="background-color: #d0e4fe">
+        <h2 align="center"> <b>Register<b></h2>
+        <div align="center">
         <table>
             <form action="RegisterValidate" method="post">
                 <tr>
@@ -44,5 +46,6 @@
                 </tr>
             </form>
         </table>
+        </div>
     </body>
 </html>

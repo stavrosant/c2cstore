@@ -10,8 +10,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel='stylesheet' type='text/css' href='CreateModerator-desine.css'/>
     </head>
-    <body>
+    <body style="background-color: #d0e4fe">
         <h1 align="center">Create Moderator</h1>
         <form action="" method="POST">
             <table align="center">
