@@ -25,6 +25,7 @@
                 <tr>
                     <td>E-mail:</td>
                     <td align="right"><input type="email" name="email"  placeholder="Enter a valid email" required></td> 
+                    <td><label for="male" style="color: #CC0000">Wrong Email</label></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
@@ -33,10 +34,6 @@
                 <tr>
                     <td>Confirm Password:</td>
                     <td align="right"><input type="password" name="confirmpassword" required></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td><label>Security Question</label></td>
@@ -50,7 +47,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Answer:</td>
+                    <td>Answer</td>
                     <td align="right"><input type="text" name="securityanswer" required></td>
                 </tr>
                 <tr>
@@ -67,7 +64,7 @@
                 </tr>
                 <tr>
                     <td>Address:</td>
-                    <td align="right"><input type="text" name="address" required></td>
+                    <td align="right"><input type="text" name="adrress" required></td>
                 </tr>
                 <tr>
                     <td>Postal Code:</td>

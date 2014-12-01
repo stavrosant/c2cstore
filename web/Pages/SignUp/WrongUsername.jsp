@@ -21,6 +21,7 @@
                 <tr>
                     <td>User Name:</td>
                     <td align="right"><input type="text" name="username" placeholder="5-15 Characters" required></td>
+                    <td><label for="male" style="color: #CC0000">Wrong User Name</label>
                 </tr>
                 <tr>
                     <td>E-mail:</td>
@@ -35,10 +36,6 @@
                     <td align="right"><input type="password" name="confirmpassword" required></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
                     <td><label>Security Question</label></td>
                     <td align="right">
                         <select name="question">
@@ -46,11 +43,11 @@
                             <option value="2">What is the name of your city birth</option>
                             <option value="3">What was your first car?</option>
                             <option value="4">You love programming?</option>
-                      </select>
+                        </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>Answer:</td>
+                    <td>Answer</td>
                     <td align="right"><input type="text" name="securityanswer" required></td>
                 </tr>
                 <tr>
@@ -67,7 +64,7 @@
                 </tr>
                 <tr>
                     <td>Address:</td>
-                    <td align="right"><input type="text" name="address" required></td>
+                    <td align="right"><input type="text" name="adrress" required></td>
                 </tr>
                 <tr>
                     <td>Postal Code:</td>

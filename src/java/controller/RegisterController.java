@@ -1,10 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controller;
 
+
+
+import hibernateDAO.UserDAO;
+import hibernateModel.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -19,7 +19,7 @@ import model.RegisterModel;
  */
 @WebServlet(name = "RegisterControllerServlet", urlPatterns = {"/Register", "/RegisterValidate"})
 public class RegisterController extends HttpServlet {
-
+ 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)  
                    throws ServletException, IOException {  
@@ -34,6 +34,7 @@ public class RegisterController extends HttpServlet {
                }
                else if(userPath.equals("/RegisterValidate")){
 
+ 
                    RegisterModel rm = new RegisterModel();
 
                    rm.setName(request.getParameter("name"));
@@ -42,21 +43,62 @@ public class RegisterController extends HttpServlet {
                    rm.setEmail(request.getParameter("email"));
                    rm.setPassword(request.getParameter("password"));
                    rm.setConfirmpassword(request.getParameter("confirmpassword"));
+                   rm.setSequrityquestion(request.getParameter("question"));
+                   rm.setSecurityanswer(request.getParameter("securityanswer"));
+                   rm.setCountry(request.getParameter("country"));
+                   rm.setCity(request.getParameter("city"));
+                   rm.setState(request.getParameter("state"));
+                   rm.setAddress(request.getParameter("address"));
+                   rm.setPostalcode(request.getParameter("postalcode"));
+                   rm.setPhone(request.getParameter("phone"));
 
                    rm.validateUsername();
                    rm.validateEmail();
-                   rm.validatePasswotd();
+                   rm.validatePassword();
+                   
                    boolean status = rm.validate();
-
+                   
                    if(status){
+                       
+                       User user = new User(rm.getName(), rm.getSurname(), rm.getUsername(), "user", rm.getEmail(), rm.getSequrityquestion(), 
+                               rm.getSecurityanswer(), rm.getPassword(), rm.getCity(), rm.getCountry(), rm.getState(), rm.getAddress(), rm.getPostalcode(), rm.getPhone());
+                       UserDAO userDAO = new UserDAO();
+                       userDAO.addUser(user);
+                       
                        RequestDispatcher rd=request.getRequestDispatcher("/Pages/Dashboards/UserLoginSuccess.jsp");  
                        rd.forward(request, response);
                    }
-                   else{
-                       RequestDispatcher rd=request.getRequestDispatcher("/Pages/SignUp/RegisterError.jsp");  
-                       rd.forward(request, response); 
-                   }
-               }
+                   else {
+                       if((((rm.isUsernameCheck()==false) && (rm.isEmailCheck()==true)) && (rm.isPasswordCheck()==true))){
+                           RequestDispatcher rd=request.getRequestDispatcher("/Pages/SignUp/WrongUsername.jsp");  
+                           rd.forward(request, response);
+                        }
+                       else if((((rm.isUsernameCheck()==false) && (rm.isEmailCheck()==false)) && (rm.isPasswordCheck()==true))){
+                           RequestDispatcher rd=request.getRequestDispatcher("/Pages/SignUp/WrongUsernameAndEmail.jsp");  
+                           rd.forward(request, response);
+                       }
+                       else if((((rm.isUsernameCheck()==false) && (rm.isEmailCheck()==false)) && (rm.isPasswordCheck()==false))){
+                           RequestDispatcher rd=request.getRequestDispatcher("/Pages/SignUp/WrongUsernameAndEmailAndPass.jsp");  
+                           rd.forward(request, response);
+                       }
+                       else if((((rm.isUsernameCheck()==true) && (rm.isEmailCheck()==false)) && (rm.isPasswordCheck()==true))){
+                           RequestDispatcher rd=request.getRequestDispatcher("/Pages/SignUp/WrongEmail.jsp");  
+                           rd.forward(request, response);
+                       }
+                       else if((((rm.isUsernameCheck()==true) && (rm.isEmailCheck()==false)) && (rm.isPasswordCheck()==false))){
+                           RequestDispatcher rd=request.getRequestDispatcher("/Pages/SignUp/WrongEmailAndPass.jsp");  
+                           rd.forward(request, response);
+                       }
+                       else if((((rm.isUsernameCheck()==true) && (rm.isEmailCheck()==true)) && (rm.isPasswordCheck()==false))){
+                           RequestDispatcher rd=request.getRequestDispatcher("/Pages/SignUp/WrongPass.jsp");  
+                           rd.forward(request, response);
+                       }
+                       else if((((rm.isUsernameCheck()==false) && (rm.isEmailCheck()==true)) && (rm.isPasswordCheck()==false))){
+                           RequestDispatcher rd=request.getRequestDispatcher("/Pages/SignUp/WrongUsernameAndPass.jsp");  
+                           rd.forward(request, response);
+                       }
+                    }
+                }
     }
       
     @Override  

@@ -3,35 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DBMOCKS;
+package mocksDB;
 
 /**
  *
  * @author Admin
  */
-public class DBMock {
+public class LoginMock {
+    
     private String username,password,rank;
-    public DBMock(String usrnm, String pass, String rank){
+    
+    public LoginMock(String usrnm, String pass, String rank){
         this.username = usrnm;
         this.password = pass;
         this.rank = rank;
     }
+    
     public String getName(){
-    
-        return username;
-    
+       return username;
     }
     
     
     public String getPass(){
-    
         return password;
-    
     }
 
     public String getRank(){
-    
         return rank;
-    
     }
 }

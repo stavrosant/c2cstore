@@ -12,6 +12,15 @@ public class RegisterModel {
     private String email;
     private String password;
     private String confirmpassword;
+    private String sequrityquestion;
+    private String securityanswer;
+    private String country;
+    private String state;
+    private String city;
+    private String address;
+    private String postalcode;
+    private String phone;
+    private String rank = "user";
     private final String usernamePattern;
     private final String emailPattern;
     private boolean emailCheck;
@@ -26,6 +35,10 @@ public class RegisterModel {
         this.emailPattern  = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
     }
 
+    public String getRank() {
+        return rank;
+    }
+    
     public String getName() {
         return name;
     }
@@ -74,6 +87,71 @@ public class RegisterModel {
         this.confirmpassword = confirmpassword;
     }
 
+    public String getSecurityanswer() {
+        return securityanswer;
+    }
+
+    public void setSecurityanswer(String securityanswer) {
+        this.securityanswer = securityanswer;
+    }
+
+    public String getSequrityquestion() {
+        return sequrityquestion;
+    }
+
+    public void setSequrityquestion(String sequrityquestion) {
+        this.sequrityquestion = sequrityquestion;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostalcode() {
+        return postalcode;
+    }
+
+    public void setPostalcode(String postalcode) {
+        this.postalcode = postalcode;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
+    
     public boolean isEmailCheck() {
         return emailCheck;
     }
@@ -109,7 +187,7 @@ public class RegisterModel {
         Matcher em = ep.matcher(this.email);
         setEmailCheck(em.matches());
     }
-    public void validatePasswotd(){
+    public void validatePassword(){
         if(this.password.equals(this.confirmpassword))
             setPasswordCheck(true);
         else

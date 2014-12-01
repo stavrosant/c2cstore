@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model;
 
 import org.junit.After;
@@ -106,32 +102,32 @@ public class RegisterModelTest {
     
 
     /**
-     * Test of validatePasswotd method, of class RegisterModel.
+     * Test of validatePassword method, of class RegisterModel.
      */
     @Test
-    public void testValidatePasswotd1() {
+    public void testValidatePassword1() {
         String password = "123";
         String confirmPassword = "123";
         RegisterModel instance = new RegisterModel();
         instance.setPassword(password);
         instance.setConfirmpassword(confirmPassword);
-        instance.validatePasswotd();
+        instance.validatePassword();
         boolean expResult = true;
         boolean result = instance.isPasswordCheck();
         assertEquals(expResult, result);
     }
     
     /**
-     * Test of validatePasswotd method, of class RegisterModel.
+     * Test of validatePassword method, of class RegisterModel.
      */
     @Test
-    public void testValidatePasswotd2() {
+    public void testValidatePassword2() {
         String password = "123";
         String confirmPassword = "321";
         RegisterModel instance = new RegisterModel();
         instance.setPassword(password);
         instance.setConfirmpassword(confirmPassword);
-        instance.validatePasswotd();
+        instance.validatePassword();
         boolean expResult = false;
         boolean result = instance.isPasswordCheck();
         assertEquals(expResult, result);
@@ -151,7 +147,7 @@ public class RegisterModelTest {
        instance.setConfirmpassword("12345");
        instance.validateUsername();
        instance.validateEmail();
-       instance.validatePasswotd();
+       instance.validatePassword();
        if(instance.isUsernameCheck()==true && instance.isEmailCheck() && instance.isPasswordCheck()){
            result = true;
        }
@@ -174,7 +170,7 @@ public class RegisterModelTest {
        instance.setConfirmpassword("12345");
        instance.validateUsername();
        instance.validateEmail();
-       instance.validatePasswotd();
+       instance.validatePassword();
        if(instance.isUsernameCheck()==true && instance.isEmailCheck() && instance.isPasswordCheck()){
            result = true;
        }
@@ -198,7 +194,7 @@ public class RegisterModelTest {
        instance.setConfirmpassword("12345");
        instance.validateUsername();
        instance.validateEmail();
-       instance.validatePasswotd();
+       instance.validatePassword();
        if(instance.isUsernameCheck()==true && instance.isEmailCheck() && instance.isPasswordCheck()){
            result = true;
        }
@@ -222,7 +218,7 @@ public class RegisterModelTest {
        instance.setConfirmpassword("54321");
        instance.validateUsername();
        instance.validateEmail();
-       instance.validatePasswotd();
+       instance.validatePassword();
        if(instance.isUsernameCheck()==true && instance.isEmailCheck() && instance.isPasswordCheck()){
            result = true;
        }
