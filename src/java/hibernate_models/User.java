@@ -25,14 +25,14 @@ public class User  implements java.io.Serializable {
      private String state;
      private String address;
      private String postalCode;
-     private int phone;
+     private String phone;
      private Set<Store> stores = new HashSet<Store>(0);
 
     public User() {
     }
 
 	
-    public User(String name, String lastname, String username, String rank, String email, String secretQ, String secretA, String password, String city, String country, String state, String address, String postalCode, int phone) {
+    public User(String name, String lastname, String username, String rank, String email, String secretQ, String secretA, String password, String city, String country, String state, String address, String postalCode, String phone) {
         this.name = name;
         this.lastname = lastname;
         this.username = username;
@@ -48,7 +48,7 @@ public class User  implements java.io.Serializable {
         this.postalCode = postalCode;
         this.phone = phone;
     }
-    public User(String name, String lastname, String username, String rank, String email, String secretQ, String secretA, String password, String city, String country, String state, String address, String postalCode, int phone, Set<Store> stores) {
+    public User(String name, String lastname, String username, String rank, String email, String secretQ, String secretA, String password, String city, String country, String state, String address, String postalCode, String phone, Set<Store> stores) {
        this.name = name;
        this.lastname = lastname;
        this.username = username;
@@ -164,11 +164,11 @@ public class User  implements java.io.Serializable {
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
-    public int getPhone() {
+    public String getPhone() {
         return this.phone;
     }
     
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
     public Set<Store> getStores() {

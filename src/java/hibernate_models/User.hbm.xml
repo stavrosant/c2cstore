@@ -47,8 +47,8 @@
         <property name="postalCode" type="string">
             <column name="PostalCode" length="45" not-null="true" />
         </property>
-        <property name="phone" type="int">
-            <column name="Phone" not-null="true" />
+        <property name="phone" type="string">
+            <column name="Phone" length="11" not-null="true" />
         </property>
         <set name="stores" table="store" inverse="true" lazy="true" fetch="select">
             <key>
