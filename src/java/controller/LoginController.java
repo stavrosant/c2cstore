@@ -9,7 +9,7 @@
     import javax.servlet.http.HttpServletRequest;  
     import javax.servlet.http.HttpServletResponse; 
     //import hibernateUtis.LoginUtil;
-    import hibernate_models.User;
+    import hibernateModel.User;
     
     public class LoginController extends HttpServlet {  
         @Override

@@ -1,6 +1,6 @@
     package model; 
 
-    import hibernate_models.User;
+    import hibernateModel.User;
     
     public class LoginUserModel {  
         private String name, password, rank;

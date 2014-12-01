@@ -3,7 +3,7 @@
     Created on : 12 Νοε 2014, 12:09:20 μμ
     Author     : Admin
 --%>
-<%@page import="hibernate_models.User"%> 
+<%@page import="hibernateModel.User"%> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

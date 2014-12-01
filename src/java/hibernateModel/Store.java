@@ -1,4 +1,4 @@
-package hibernate_models;
+package hibernateModel;
 // Generated Nov 30, 2014 2:43:46 PM by Hibernate Tools 4.3.1
 
 

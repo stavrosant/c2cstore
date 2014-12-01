@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hibernateUtis;
+package hibernateUtils;
 
-import hibernate_models.User;
+import hibernateModel.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.cfg.AnnotationConfiguration;

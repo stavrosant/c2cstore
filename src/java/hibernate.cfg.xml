@@ -6,9 +6,9 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/user_store_db?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <mapping resource="hibernate_models/Store.hbm.xml"/>
-    <mapping resource="hibernate_models/Storeitems.hbm.xml"/>
-    <mapping resource="hibernate_models/Categories.hbm.xml"/>
-    <mapping resource="hibernate_models/User.hbm.xml"/>
+    <mapping resource="hibernateModel/Store.hbm.xml"/>
+    <mapping resource="hibernateModel/Storeitems.hbm.xml"/>
+    <mapping resource="hibernateModel/Categories.hbm.xml"/>
+    <mapping resource="hibernateModel/User.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

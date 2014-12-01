@@ -1,4 +1,4 @@
-<%@page import="hibernate_models.User"%>  
+<%@page import="hibernateModel.User"%>  
   
 <p>You are successfully logged in!</p>  
 <%  

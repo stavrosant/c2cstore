@@ -5,8 +5,8 @@
  */
 package hibernateDAO;
 
-import hibernateUtis.LoginUtil;
-import hibernate_models.User;
+import hibernateUtils.LoginUtil;
+import hibernateModel.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
