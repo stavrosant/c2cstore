@@ -1,5 +1,6 @@
     package controller;  
     import ConnectionMock.ConnMock;
+import hibernateDAO.LoginDAO;
     import model.LoginUserModel;
     import java.io.IOException;  
     import java.io.PrintWriter;  
@@ -7,7 +8,9 @@
     import javax.servlet.ServletException;  
     import javax.servlet.http.HttpServlet;  
     import javax.servlet.http.HttpServletRequest;  
-    import javax.servlet.http.HttpServletResponse;  
+    import javax.servlet.http.HttpServletResponse; 
+    import hibernateUtis.LoginUtil;
+import hibernate_models.User;
     public class LoginController extends HttpServlet {  
         @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response)  
@@ -17,49 +20,83 @@
               
             String name=request.getParameter("name");  
             String password=request.getParameter("password");  
+             
+            User ur = new User();
+            LoginDAO LU = new LoginDAO();
+            LoginUserModel LUM=new LoginUserModel();
+            try{
+                ur = LU.getDBUser(name);
+                LUM.setUser(ur);
+                LUM.setPassword(password);
+                String dispaddress = LUM.getRDFoward();
+                RequestDispatcher rd;
+                rd=request.getRequestDispatcher(dispaddress);  
+                request.setAttribute("bean",ur);
+                rd.forward(request, response);
               
-            LoginUserModel LUM=new LoginUserModel();  
-            LUM.setName(name);  
-            LUM.setPassword(password);  
-            request.setAttribute("bean",LUM);  
+                
+            }
+            catch(java.lang.NullPointerException ex){
+                RequestDispatcher rd;
+                rd=request.getRequestDispatcher("/Pages/Login/WrongName.jsp");  
+                rd.forward(request, response);
+            }
             
-            ConnMock DBconnMock = new ConnMock();
-            boolean Namestatus = LUM.validateName(DBconnMock);
-            boolean Passstatus = LUM.validatePass(DBconnMock);
-            RequestDispatcher rd;
             
-            if(Namestatus){ 
-                if(Passstatus){
-                    switch (DBconnMock.getRank()){
-                        case "User":
-                            rd=request.getRequestDispatcher("/Pages/Dashboards/UserLoginSuccess.jsp");  
-                            rd.forward(request, response); 
-                        break;
-                        case "Moderator":
-                            rd=request.getRequestDispatcher("/Pages/Dashboards/ModeratorDashboard.jsp");  
-                            rd.forward(request, response);
-                        break;
-                        case "SuperUser":
-                            rd=request.getRequestDispatcher("/Pages/Dashboards/SuperUserDashboard.jsp");  
-                            rd.forward(request, response);
-                        break;
-                    }
-                }
-                else{
-                    rd=request.getRequestDispatcher("/Pages/Login/WrongPass.jsp");  
-                    rd.forward(request, response);
-                }
-            }  
-            else{ 
-                if(Passstatus){
-                    rd=request.getRequestDispatcher("/Pages/Login/WrongName.jsp");  
-                    rd.forward(request, response);  
-                }
-                else{
-                    rd=request.getRequestDispatcher("/Pages/Login/WrongName.jsp");  
-                    rd.forward(request, response);
-                }
-            }  
+                
+               
+            
+            
+            //CONNECTION TO DB
+            
+            
+            //request.setAttribute("bean",ur);  
+            
+//            ConnMock DBconnMock = new ConnMock();
+//            boolean Namestatus = LUM.validateName(DBconnMock);
+//            boolean Passstatus = LUM.validatePass(DBconnMock);
+//            RequestDispatcher rd;
+////////             out.println("<!DOCTYPE html>");
+////////            out.println("<html>");
+////////            out.println("<head>");
+////////            out.println("<title>Servlet NewServlet</title>");            
+////////            out.println("</head>");
+////////            out.println("<body>");
+////////            out.println("<h1>PASSWORD : " + DBpass + "</h1>");
+////////            out.println("</body>");
+////////            out.println("</html>");
+//            if(Namestatus){ 
+//                if(Passstatus){
+//                    switch (DBconnMock.getRank()){
+//                        case "User":
+//                            rd=request.getRequestDispatcher("/Pages/Dashboards/UserLoginSuccess.jsp");  
+//                            rd.forward(request, response); 
+//                        break;
+//                        case "Moderator":
+//                            rd=request.getRequestDispatcher("/Pages/Dashboards/ModeratorDashboard.jsp");  
+//                            rd.forward(request, response);
+//                        break;
+//                        case "SuperUser":
+//                            rd=request.getRequestDispatcher("/Pages/Dashboards/SuperUserDashboard.jsp");  
+//                            rd.forward(request, response);
+//                        break;
+//                    }
+//                }
+//                else{
+//                    rd=request.getRequestDispatcher("/Pages/Login/WrongPass.jsp");  
+//                    rd.forward(request, response);
+//                }
+//            }  
+//            else{ 
+//                if(Passstatus){
+//                    rd=request.getRequestDispatcher("/Pages/Login/WrongName.jsp");  
+//                    rd.forward(request, response);  
+//                }
+//                else{
+//                    rd=request.getRequestDispatcher("/Pages/Login/WrongName.jsp");  
+//                    rd.forward(request, response);
+//                }
+//            }  
           
         }  
         

@@ -3,7 +3,7 @@
     Created on : 12 Νοε 2014, 12:09:20 μμ
     Author     : Admin
 --%>
-<%@page import="model.LoginUserModel"%> 
+<%@page import="hibernate_models.User"%> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,10 +12,14 @@
         <title>SUPER USER CONTROL PANEL</title>
     </head>
     <body>
-       
+       <p>You are successfully logged in!</p> 
     </body>
 </html>
 <%  
-LoginUserModel LUM=(LoginUserModel)request.getAttribute("bean");  
-out.print("Welcome, "+LUM.getName());  
+User user=(User)request.getAttribute("bean");  
+out.print("Welcome, "+user.getName());  
 %> 
+
+ 
+  
+ 

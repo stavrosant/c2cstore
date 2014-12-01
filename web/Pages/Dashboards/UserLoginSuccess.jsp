@@ -1,7 +1,7 @@
-<%@page import="model.LoginUserModel"%>  
+<%@page import="hibernate_models.User"%>  
   
 <p>You are successfully logged in!</p>  
 <%  
-LoginUserModel LUM=(LoginUserModel)request.getAttribute("bean");  
-out.print("Welcome, "+LUM.getName());  
+User user=(User)request.getAttribute("bean");  
+out.print("Welcome, "+user.getName());  
 %> 

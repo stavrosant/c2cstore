@@ -1,40 +1,62 @@
     package model; 
-    import ConnectionMock.ConnMock;
+
+    import hibernate_models.User;
     
     public class LoginUserModel {  
-        private String name,password;  
+        private String name, password, rank;
+        private User user;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+    
+         
+    public String getRDFoward(){
+    
+        if(user.getPassword().equals(password)){
         
-        
-        public String getName() {  
-            return name;  
+            if(user.getRank().equals("user")){
+                return "/Pages/Dashboards/UserLoginSuccess.jsp";
+            }
+            else if(user.getRank().equals("moderator")){
+                return "/Pages/Dashboards/ModeratorDashboard.jsp";
+            }
+            else{
+                return "/Pages/Dashboards/SuperUserDashboard.jsp";
+            }
         }
-        public void setName(String name) {  
-            this.name = name;  
+        else{
+            return "/Pages/Login/WrongPass.jsp";
         }
-        
-        public String getPassword() {  
-            return password;  
-        }  
-        public void setPassword(String password) {  
-            this.password = password;  
-        }
-       
-        
-        public boolean validatePass(ConnMock DBconn){  
-            if(password.equals(DBconn.getPass())){  
-                return true;  
-            }  
-            else{  
-                return false;  
-            }  
-        }  
-        
-        public boolean validateName(ConnMock DBconn){  
-            if(name.equals(DBconn.getName())){  
-                return true;  
-            }  
-            else{  
-                return false;  
-            }  
-        }  
-    }  
+    
+    }
+          
+}  

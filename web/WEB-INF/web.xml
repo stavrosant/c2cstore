@@ -8,4 +8,10 @@
         <servlet-name>s1</servlet-name>
         <url-pattern>/Index</url-pattern>
     </servlet-mapping>
+    <resource-ref>
+        <res-ref-name>a</res-ref-name>
+        <res-type>javax.mail.Session</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
 </web-app>
